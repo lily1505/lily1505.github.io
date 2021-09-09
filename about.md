@@ -9,4 +9,4 @@ permalink_fr: /qui-sommes-nous/
 permalink_nl: /wie-zijn-we/
 ---
 
-{% tf about.md %}
+{% translate_file about.md %}
