@@ -1,57 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Test</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    <!-- important to fix zoom in mobile view -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
-<body>
+    <head lang="{{ site.lang }}">
+        <meta charset="utf-8">
+        <meta name="description" content="{% t site.description %}"/>
+        <meta name="keywords" content="{% t site.keywords %}"/>
+        <title>{% t site.name %} - {% t site.tagline %}</title>
 
-<header class="header">
-    <a href="#" class="logo">
-    </a>
-    <input class="menu-btn" type="checkbox" id="menu-btn" />
-    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-    <ul class="menu">
-        <li>
-            <a href="./main.html" class="nav-section">Accueil</a>
-        </li>
-        <li>
-            <a href="./howarewe.html" class="nav-section">Qui sommes-nous</a>
-        </li>
-        <li>
-            <a href="./philosophy.html" class="nav-section">Philosophie</a>
-        </li>
-        <li>
-            <a href="./services.html" class="nav-section">Services</a>
-        </li>
-        <li>
-            <a href="./contactus.html" class="nav-section">Contactez-nous</a>
-        </li>
-    </ul>
-</header>
+        <link href="styles.css" rel="stylesheet" type="text/css">
+        <!-- important to fix zoom in mobile view -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    </head>
+    <body>
 
-<div class="home-view">
-    <div class="content">
-        <p>coucou</p>
-        <div id=switch-txt>
-            <div id=flip>
-                <div><div>Hey</div></div>
-                <div><div class="green">Ho</div></div>
-                <div><div>Yeah</div></div>
+        <div class="home-view">
+            <div class="content">
+                <p>coucou</p>
             </div>
         </div>
-        <div class="home-link">
-        </div>
-    </div>
-</div>
-<div style="height: 60px; margin-top: -60px"  id="entreprise"></div>
-<div class="wrapper bg-purple">
-    <div class="container">
-        <h2 class="section-title">Entreprise</h2>
-    </div>
-</div>
+        <footer>
+            <a class="active" href="#">{{ site.languageNames[site.lang] }}</a>
+            {% for lang in site.languageNames %}
+            {% if lang[0] == site.lang %} {% continue %} {% endif %}
+            {% if page.namespace %}
+            <a href="{% tl {{ page.namespace }} {{ lang[0] }} %}">{{ lang[1] }}</a>
+            {% else %}
+            <a href="{{ site.baseurl_root }}/{{ lang[0] }}/">{{ lang[1] }}</a>
+            {% endif %}
+            {% endfor %}
+        </footer>
 
-</body>
+    </body>
 </html>
