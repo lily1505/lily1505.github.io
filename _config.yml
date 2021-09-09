@@ -7,3 +7,5 @@ languageNames:
   en: English
   de: German
   nl: Dutch
+plugins:
+  - jekyll-multiple-languages-plugin
