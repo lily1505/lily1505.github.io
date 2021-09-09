@@ -1,8 +1,8 @@
 ---
 layout: page
-title: pages.aboutus
+title: pages.about
 
-namespace: aboutus
+namespace: about
 permalink: /about-us/
 permalink_de: /ueber-uns/
 permalink_fr: /qui-sommes-nous/
